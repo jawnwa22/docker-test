@@ -2,6 +2,8 @@ pipeline {
   agent {
     dockerfile {
       filename 'Dockerfile'
+      label 'docker-test'
+      additionalBuildArgs '-t docker-test'
     }
 
   }
