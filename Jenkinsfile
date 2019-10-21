@@ -1,16 +1,14 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
-      label 'docker-test'
-      additionalBuildArgs '-t docker-test'
-    }
-
-  }
+  agent any
   stages {
-    stage('Test') {
+    stage('build') {
       steps {
-        sh 'node --version'
+        sh 'docker build -t jawnwa22/node-web-app .'
+      }
+    }
+    stage('run') {
+      steps {
+        sh 'docker run -p 3000:3000 -d --rm'
       }
     }
   }
