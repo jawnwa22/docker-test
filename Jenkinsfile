@@ -8,7 +8,7 @@ pipeline {
     }
     stage('run') {
       steps {
-        sh 'docker run -p 3000:3000 -d --rm'
+        sh 'docker run -p 3000:3000 -d --rm jawnwa22/node-web-app'
       }
     }
   }
