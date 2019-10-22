@@ -11,7 +11,7 @@ const main = (ctx) => {
     console.log(ctx);
     
 }
-
+// 1
 app.use(route.get("/", main));
 app.use(route.get('/redirect', redirect));
 
